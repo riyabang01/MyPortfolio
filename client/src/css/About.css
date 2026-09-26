@@ -1,0 +1,117 @@
+/* Full screen premium dark gradient */
+.about-page {
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  background: linear-gradient(135deg, #2a0a45, #320d58, #2a0a45);
+  background-size: 250% 250%;
+  animation: gradientMove 14s ease infinite;
+  color: white;
+  text-align: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/* Smooth gradient movement */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Title styling */
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Intro text */
+.about-intro {
+  font-size: 1.2rem;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 40px;
+  color: #e4d5f7;
+}
+
+.name {
+  color: #ffe94c;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+/* Grid sections */
+.about-sections {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .about-sections {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Glassmorphism cards */
+.about-card {
+  background: rgba(255, 255, 255, 0.10);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  transition: 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: left;
+}
+
+.about-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Card title */
+.about-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #ffe94c;
+}
+
+/* Card text */
+.about-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #f3eaff;
+}
+
+@media (max-width: 576px) {
+  .about-title {
+    font-size: 2rem;
+  }
+  .about-intro {
+    font-size: 1.05rem;
+  }
+  .name {
+    font-size: 1.1rem;
+  }
+  .about-card {
+    padding: 20px;
+  }
+  .about-card h2 {
+    font-size: 1.25rem;
+  }
+  .about-card p {
+    font-size: 0.95rem;
+  }
+}

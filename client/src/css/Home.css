@@ -1,0 +1,232 @@
+.home-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 100px 25px 60px 25px;
+  background: linear-gradient(135deg, #2a0a45, #320d58, #2a0a45);
+  background-size: 250% 250%;
+  animation: gradientMove 14s ease infinite;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-row {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.hero-photo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-photo img {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: 5px solid #ffe94c;
+}
+
+.hero-content {
+  flex: 1.2;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-title span {
+  color: #ffe94c;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #f3eaff;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.hero-text {
+  font-size: 1.15rem;
+  color: #e4d5f7;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  padding: 14px 32px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #2a0a45;
+  background-color: #ffe94c;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(255, 233, 76, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-btn:hover {
+  background-color: #ffd600;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 233, 76, 0.5);
+}
+
+/* UPDATED: Strictly 4 items per row on desktop using Grid */
+.skills-row {
+  max-width: 900px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  justify-items: center;
+}
+
+/* UPDATED: Adjusted width scaling for grid structure */
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.10);
+  padding: 20px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 160px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skill:hover {
+  transform: translateY(-8px) scale(1.05);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.skill i {
+  font-size: 2.5rem;
+  color: #ffe94c;
+  margin-bottom: 10px;
+}
+
+.skill p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* NEW: Blinking typing text cursor */
+.cursor {
+  color: #ffe94c;
+  font-weight: 400;
+  animation: blink 0.7s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.fade-in-left {
+  animation: fadeInLeft 1s ease forwards;
+}
+
+.fade-in-right {
+  animation: fadeInRight 1s ease forwards;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Tablets and medium screens */
+@media (max-width: 991px) {
+  .hero-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .hero-photo img {
+    width: 260px;
+    height: 260px;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .skills-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 576px) {
+  .home-container {
+    padding-top: 85px;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .skills-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .skill {
+    max-width: 120px;
+    padding: 15px;
+  }
+  
+  .skill i {
+    font-size: 2rem;
+  }
+}

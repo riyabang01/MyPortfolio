@@ -1,0 +1,17 @@
+.footer-custom {
+  background-color: #2a0a45;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-custom p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #e4d5f7;
+  font-weight: 400;
+  text-align: center;
+}

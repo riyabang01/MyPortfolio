@@ -1,0 +1,154 @@
+.navbar-section {
+  background-color: rgba(42, 10, 69, 0.85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  z-index: 1030;
+}
+
+.nav-logo {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: color 0.2s ease;
+}
+
+.nav-logo:hover {
+  color: #ffe94c;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #f3eaff;
+  text-decoration: none;
+  position: relative;
+  padding: 3px 0;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ffe94c;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffe94c;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #e4d5f7;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons a:hover {
+  color: #ffe94c;
+  transform: translateY(-2px);
+}
+
+.icon-gap {
+  width: 1px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 0 15px;
+}
+
+.resume-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.resume-btn {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid #ffe94c;
+  background-color: #ffe94c;
+  color: #2a0a45;
+  transition: all 0.2s ease;
+}
+
+.resume-btn:hover {
+  background-color: #ffd600;
+  border-color: #ffd600;
+  color: #2a0a45;
+}
+
+.resume-btn.outline {
+  background-color: transparent;
+  color: #ffe94c;
+}
+
+.resume-btn.outline:hover {
+  background-color: #ffe94c;
+  color: #2a0a45;
+}
+
+@media (max-width: 991px) {
+  .navbar-section {
+    padding: 6px 0;
+  }
+  
+  .nav-links {
+    gap: 15px;
+  }
+  
+  .icon-gap {
+    margin: 0 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .resume-btn {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}
