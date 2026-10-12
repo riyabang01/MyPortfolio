@@ -3,7 +3,7 @@ import axios from "axios";
 import "../css/Project.css";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_BASE_URL = ""; 
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
