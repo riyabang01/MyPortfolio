@@ -3,21 +3,7 @@ import axios from "axios";
 import "../css/Project.css";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
-
-const getProjectOrder = (title = "") => {
-  const normalized = title.toLowerCase().trim();
-
-  if (normalized.includes("green") && normalized.includes("cart")) return 2;
-  if (normalized.includes("homely") || normalized === "hub") return 3;
-  if (normalized.includes("college") || normalized.includes("event") || normalized.includes("ems")) return 4;
-  if (normalized.includes("social") || normalized.includes("media") || normalized.includes("fusion")) return 5;
-  if (normalized.includes("speech") || normalized.includes("text-to-speech")) return 6;
-  if (normalized.includes("portfolio") || normalized.includes("myportfolio")) return 7;
-  if (normalized.includes("calculator")) return 8;
-
-  return 1;
-};
+const API_BASE_URL = ""; 
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -25,14 +11,26 @@ const Projects = () => {
 
   useEffect(() => {
     setAnimateHeading(true);
-
     const fetchProjects = async () => {
       try {
         const res = await axios.get(`${API_BASE_URL}/api/projects`);
-
         const sortedProjects = [...res.data].sort((a, b) => {
-          const orderA = getProjectOrder(a.title);
-          const orderB = getProjectOrder(b.title);
+          const titleA = a.title ? a.title.toLowerCase().trim() : "";
+          const titleB = b.title ? b.title.toLowerCase().trim() : "";
+          
+          const getOrder = (title) => {
+            if (title.includes("green") && title.includes("cart")) return 2;
+            if (title.includes("homely") || title === "hub") return 3;
+            if (title.includes("college") || title.includes("event") || title.includes("ems")) return 4;
+            if (title.includes("social") || title.includes("media") || title.includes("fusion")) return 5;
+            if (title.includes("speech") || title.includes("text-to-speech")) return 6;
+            if (title.includes("portfolio") || title.includes("myportfolio")) return 7;
+            if (title.includes("calculator")) return 8;
+            return 1;
+          };
+
+          const orderA = getOrder(titleA);
+          const orderB = getOrder(titleB);
 
           if (orderA !== orderB) {
             return orderA - orderB;
@@ -42,15 +40,13 @@ const Projects = () => {
             return new Date(b.createdAt) - new Date(a.createdAt);
           }
 
-          return b._id.localeCompare(a._id);
+          return String(b._id || "").localeCompare(String(a._id || ""));
         });
-
         setProjects(sortedProjects);
       } catch (error) {
         console.error("Error fetching projects:", error);
       }
     };
-
     fetchProjects();
   }, []);
 
