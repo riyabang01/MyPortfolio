@@ -19,6 +19,12 @@ const CONTACT_INFO = {
 };
 
 const EXPERIENCES = [
+   {
+    role: "Full Stack Development Intern",
+    company: "VirtualWorks (Remote)",
+    duration: "Nov 2026 – Jan 2027",
+    details: "Develop and maintain responsive web applications and productivity tools, implementing backend logic, CRUD operations, and persistent data storage.  \n \n •	Build interactive front-end interfaces and collaborate via Git/GitHub in a remote environment to deliver clean, functional software features."
+  },
   {
     role: "Full Stack Web Development Intern",
     company: "Codveda Technologies (Remote)",
